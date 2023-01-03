@@ -1,5 +1,1 @@
 .env
-datasets/images/bw/*
-datasets/images/hsv/*
-datasets/audio/*
-./datasets
