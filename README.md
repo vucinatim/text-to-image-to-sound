@@ -4,7 +4,7 @@
 
 ```bash
 git clone https://github.com/vucinatim/text-to-image-to-sound.git
-
+cd text-to-image-to-sound
 pip install -r requirements.txt
 ```
 
