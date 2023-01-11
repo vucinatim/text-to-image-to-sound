@@ -11,14 +11,14 @@ cd text-to-image-to-sound
 pip install -r requirements.txt
 ```
 
+### Additional setup
+
 If running on linux (we need to add some source library for a dependency)
 
 ```bash
 apt-get update
 apt install libsndfile1
 ```
-
-### Running example
 
 Run the following command to authenticate your token to access the dataset on [HuggingFace](https://huggingface.co/datasets/vucinatim/spectrogram-captions) (this might not be needed)
 
@@ -28,7 +28,7 @@ huggingface-cli login
 
 <br>
 
-#### Training
+### Training
 
 Initialize an [Accelerate](https://github.com/huggingface/accelerate/) environment with:
 <sub>Every setting as default except the precission is recommended as fp16</sub>
@@ -62,7 +62,7 @@ accelerate launch model/train_text_to_image.py \
 
 Once the training is finished the model will be saved in the `output_dir` specified in the command. In this example it's `outputs`. 
 
-#### Running the trained model
+### Running the trained model
 
 To load the fine-tuned model for inference just pass that path to `StableDiffusionPipeline`
 
