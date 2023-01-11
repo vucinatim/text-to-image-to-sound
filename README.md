@@ -16,7 +16,7 @@ apt install libsndfile1
 ```
 
 And initialize an [Accelerate](https://github.com/huggingface/accelerate/) environment with:
-<sub><sup>Every setting as default except the precission is recommended as fp16</sup></sub>
+<sub>Every setting as default except the precission is recommended as fp16</sub>
 
 ```bash
 accelerate config
