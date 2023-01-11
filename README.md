@@ -3,18 +3,20 @@
 ### Installing the dependencies
 
 ```bash
-git clone https://github.com/huggingface/diffusers
-cd diffusers
-pip install .
-```
+git clone https://github.com/vucinatim/text-to-image-to-sound.git
 
-Then cd in the example folder and run
-
-```bash
 pip install -r requirements.txt
 ```
 
+If running on linux (we need to add some source library for a dependency)
+
+```bash
+apt-get update
+apt install libsndfile1
+```
+
 And initialize an [Accelerate](https://github.com/huggingface/accelerate/) environment with:
+<sub><sup>Every setting as default except the precission is recommended as fp16</sup></sub>
 
 ```bash
 accelerate config
@@ -22,7 +24,7 @@ accelerate config
 
 ### Running example
 
-Run the following command to authenticate your token
+Run the following command to authenticate your token (this might not be needed)
 
 ```bash
 huggingface-cli login
@@ -36,7 +38,7 @@ huggingface-cli login
 export MODEL_NAME="CompVis/stable-diffusion-v1-4"
 export dataset_name="vucinatim/spectrogram-captions"
 
-accelerate launch train_text_to_image.py \
+accelerate launch model/train_text_to_image.py \
   --pretrained_model_name_or_path=$MODEL_NAME \
   --dataset_name=$dataset_name \
   --use_ema \
