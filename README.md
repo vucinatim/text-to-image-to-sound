@@ -1,5 +1,8 @@
 ## Running locally with PyTorch
 
+_To successfully run the model a GPU with at leas 8gb vRAM is required.
+For training at least 16gb vRAM._
+
 ### Installing the dependencies
 
 ```bash
