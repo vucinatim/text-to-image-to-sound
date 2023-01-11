@@ -18,16 +18,9 @@ apt-get update
 apt install libsndfile1
 ```
 
-And initialize an [Accelerate](https://github.com/huggingface/accelerate/) environment with:
-<sub>Every setting as default except the precission is recommended as fp16</sub>
-
-```bash
-accelerate config
-```
-
 ### Running example
 
-Run the following command to authenticate your token (this might not be needed)
+Run the following command to authenticate your token to access the dataset on [HuggingFace](https://huggingface.co/datasets/vucinatim/spectrogram-captions) (this might not be needed)
 
 ```bash
 huggingface-cli login
@@ -36,6 +29,15 @@ huggingface-cli login
 <br>
 
 #### Training
+
+Initialize an [Accelerate](https://github.com/huggingface/accelerate/) environment with:
+<sub>Every setting as default except the precission is recommended as fp16</sub>
+
+```bash
+accelerate config
+```
+
+Start the training with this command:
 
 ```bash
 export MODEL_NAME="CompVis/stable-diffusion-v1-4"
@@ -58,7 +60,11 @@ accelerate launch model/train_text_to_image.py \
   --output_dir="outputs"
 ```
 
-Once the training is finished the model will be saved in the `output_dir` specified in the command. In this example it's `outputs`. To load the fine-tuned model for inference just pass that path to `StableDiffusionPipeline`
+Once the training is finished the model will be saved in the `output_dir` specified in the command. In this example it's `outputs`. 
+
+#### Running the trained model
+
+To load the fine-tuned model for inference just pass that path to `StableDiffusionPipeline`
 
 ```python
 from diffusers import StableDiffusionPipeline
