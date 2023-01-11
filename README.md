@@ -31,7 +31,7 @@ huggingface-cli login
 ### Training
 
 Initialize an [Accelerate](https://github.com/huggingface/accelerate/) environment with:
-<sub>Every setting as default except the precission is recommended as fp16</sub>
+<sup>Every setting as default except the precission is recommended as fp16</sup>
 
 ```bash
 accelerate config
